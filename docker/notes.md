@@ -35,3 +35,7 @@ In container there is own virtual file system.
 Different containers can open ports with the same number but they must refer to different ports on host machine.
 
 We will get error if we would try to open one port for few applications
+
+## Docker network
+
+Local host network will connect to docker network. In docker network there might be multiple containers running which can communicate to each other.
