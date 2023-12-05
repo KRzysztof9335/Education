@@ -1,5 +1,17 @@
 # Docker
 
+## build
+
+Build an image with:
+```
+docker build -t my-app:1.0 .
+```
+Options:
+
+  - t - tag of an application
+  - last argument is a location of a Dockerfile
+
+
 ## exec
 
 Run interactive terminal in container

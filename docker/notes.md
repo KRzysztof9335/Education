@@ -39,3 +39,26 @@ We will get error if we would try to open one port for few applications
 ## Docker network
 
 Local host network will connect to docker network. In docker network there might be multiple containers running which can communicate to each other.
+
+## Docker compose
+
+Instead of running commands individually we can create yaml file which will do it for us. To run/shutdown specific configuration do:
+```
+docker-compose -f <yaml_file> up
+docker-compose -f <yaml_file> down
+```
+We do not need to specify network.
+
+
+## Dockerfile
+
+It is a basic file to create images
+
+FROM - Use as a base image. Always start file with this.
+ENV VAR=value - set environment variable which will be accessible when running container
+RUN Execute shell command but it will have an effect in image
+COPY Execute copy command from host to image
+CMD Entry point when container starts. Only one possible
+
+Note:
+1) It is possible to have multiple FROM statements
