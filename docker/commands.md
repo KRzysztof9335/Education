@@ -2,9 +2,9 @@
 
 ## build
 
-Build an image with:
+Build an image with
 ```
-docker build -t my-app:1.0 .
+docker build -t <app_name>:<app_tag> <dockerfile_dir>
 ```
 Options:
 
@@ -41,7 +41,7 @@ docker ps
 
 Options:
 
-  -a; print all containers even stopped
+  - a print all containers even stopped
 
 
 ## pull
@@ -60,10 +60,13 @@ Remove stopped container:
 docker rm $(docker ps -a -f status=exited -f status=created -q)
 ```
 
+## rmi
+
+Removes images
 
 ## run
 
-Runs downloaded image. If
+Runs downloaded image. If there is no image, then it will be pulled from dockerhub by default. Every run command creates new image
 ```
 docker run <image>:<tag>
 docker run -e POSTGRES_PASSWORD=password postgres:9.6
@@ -75,7 +78,7 @@ Options:
 
  -e VAR=value; set specific env variable when starting
 
- --network <name>; run container in specific network
+ --net --network <name>; run container in specific network
 
  -p <host_port>:<container_port>; bind ports. Note, host port has to be free
 
